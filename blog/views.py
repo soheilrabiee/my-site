@@ -72,7 +72,11 @@ all_posts = [
 
 
 def index(request):
-    return render(request=request, template_name="blog/index.html")
+    sorted_posts = sorted(all_posts, key=lambda post: post.get("date"))
+    latest_post = sorted_posts[-3:]
+    return render(
+        request=request, template_name="blog/index.html", context={"posts": latest_post}
+    )
 
 
 def posts(request):
