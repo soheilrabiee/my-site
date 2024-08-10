@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+This Post Title
+{% endblock title %} 
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post-detail.css" %}"/>
+{% endblock css_files %}
+
+{% block content %}
+<section id="summary">
+    <h2>Post Title</h2>
+    <article>
+      <img src="" alt="Post title" />
+      <address>By Soheil</address>
+      <div>
+        Last updated on <time>July 10th</time>
+      </div>
+    </article>
+  </section>
+  
+  <main>
+    <p>dummy text</p>
+  </main>
+{% endblock content %}
