@@ -80,8 +80,17 @@ def index(request):
 
 
 def posts(request):
-    return render(request=request, template_name="blog/all-posts.html")
+    return render(
+        request=request,
+        template_name="blog/all-posts.html",
+        context={"all_posts": all_posts},
+    )
 
 
 def post_detail(request, slug):
-    return render(request=request, template_name="blog/post-detail.html")
+    identified_post = next(post for post in all_posts if post["slug"] == slug)
+    return render(
+        request=request,
+        template_name="blog/post-detail.html",
+        context={"post": identified_post},
+    )
