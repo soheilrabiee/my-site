@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    pass
+    return render(request=request, template_name="blog/index.html")
 
 
 def posts(request):
